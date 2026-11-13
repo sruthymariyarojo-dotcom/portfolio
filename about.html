@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Me | TechAura</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #080f1e;
+            color: #f8f7f2;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+
+        .navbar {
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(232, 196, 119, 0.15);
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #e8c477;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #c5cbd5;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #e8c477;
+        }
+
+        /* About Section */
+
+        .about-section {
+            padding: 70px 10%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-heading p {
+            color: #e8c477;
+            letter-spacing: 4px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 45px;
+        }
+
+        .section-heading h1 span {
+            color: #e8c477;
+        }
+
+        /* About Content */
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 span {
+            color: #e8c477;
+        }
+
+        .about-text p {
+            color: #a6b1c2;
+            line-height: 1.9;
+            font-size: 16px;
+            margin-bottom: 18px;
+        }
+
+        .highlight {
+            color: #e8c477;
+            font-weight: 600;
+        }
+
+        /* Education Cards */
+
+        .education {
+            display: grid;
+            gap: 18px;
+        }
+
+        .education-card {
+            background: #111e32;
+            padding: 25px;
+            border: 1px solid rgba(232, 196, 119, 0.2);
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            border-color: #e8c477;
+        }
+
+        .education-card h3 {
+            color: #e8c477;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: #a6b1c2;
+            line-height: 1.7;
+        }
+
+        /* Technical Skills */
+
+        .skills-section {
+            margin-top: 75px;
+        }
+
+        .skills-section h2 {
+            text-align: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
+
+        .skills-section h2 span {
+            color: #e8c477;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: #111e32;
+            padding: 30px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(232, 196, 119, 0.2);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: #e8c477;
+            box-shadow: 0 10px 25px rgba(232, 196, 119, 0.08);
+        }
+
+        .skill-card .icon {
+            font-size: 35px;
+            color: #e8c477;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #a6b1c2;
+            font-size: 14px;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            color: #8e9aab;
+            border-top: 1px solid rgba(232, 196, 119, 0.15);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 750px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h1 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            ✧ Tech<span>Aura</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="education.html">Education</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- About Section -->
+
+    <main>
+
+        <section class="about-section">
+
+            <div class="section-heading">
+                <p>GET TO KNOW ME</p>
+                <h1>About <span>Me</span></h1>
+            </div>
+
+
+            <div class="about-content">
+
+                <!-- Personal Introduction -->
+
+                <div class="about-text">
+
+                    <h2>Hello! I'm <span>Sruthy</span></h2>
+
+                    <p>
+                        I am a passionate and enthusiastic technology
+                        learner with a strong interest in programming
+                        and software development.
+                    </p>
+
+                    <p>
+                        I have completed my <span class="highlight">Bachelor of Computer Applications (BCA)</span>
+                        and I am currently pursuing
+                        <span class="highlight">Master of Computer Applications (MCA)</span>.
+                    </p>
+
+                    <p>
+                        I have basic technical knowledge of
+                        <span class="highlight">Python, Java and C</span>.
+                        I enjoy learning new technologies, improving
+                        my programming skills and exploring creative
+                        solutions to real-world problems.
+                    </p>
+
+                    <p>
+                        My goal is to continuously improve my
+                        technical knowledge and become a skilled
+                        software developer.
+                    </p>
+
+                </div>
+
+
+                <!-- Education -->
+
+                <div class="education">
+
+                    <div class="education-card">
+
+                        <h3>🎓 Master's Degree</h3>
+
+                        <p>
+                            <strong>MCA - Master of Computer Applications</strong>
+                        </p>
+
+                        <p>Currently Pursuing</p>
+
+                    </div>
+
+
+                    <div class="education-card">
+
+                        <h3>🎓 Bachelor's Degree</h3>
+
+                        <p>
+                            <strong>BCA - Bachelor of Computer Applications</strong>
+                        </p>
+
+                        <p>Graduated</p>
+
+                        <p>BVM Holy Cross College</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Technical Skills -->
+
+            <div class="skills-section">
+
+                <h2>Technical <span>Skills</span></h2>
+
+                <div class="skills-container">
+
+                    <div class="skill-card">
+
+                        <div class="icon">🐍</div>
+
+                        <h3>Python</h3>
+
+                        <p>Programming Fundamentals</p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="icon">☕</div>
+
+                        <h3>Java</h3>
+
+                        <p>Object-Oriented Programming</p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="icon">💻</div>
+
+                        <h3>C Programming</h3>
+
+                        <p>Programming Logic and Basics</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+        <p>© 2026 TechAura | Designed by Sruthy</p>
+    </footer>
+
+</body>
+
+</html>

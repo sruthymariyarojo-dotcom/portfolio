@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Education | TechAura</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #080f1e;
+            color: #f8f7f2;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+
+        .navbar {
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(232, 196, 119, 0.15);
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #e8c477;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #c5cbd5;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #e8c477;
+        }
+
+        /* Education Section */
+
+        .education-section {
+            padding: 70px 10%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-heading p {
+            color: #e8c477;
+            font-size: 13px;
+            letter-spacing: 4px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 45px;
+        }
+
+        .section-heading h1 span {
+            color: #e8c477;
+        }
+
+        .section-description {
+            color: #a6b1c2;
+            margin-top: 12px;
+            font-size: 15px;
+        }
+
+        /* Timeline */
+
+        .timeline {
+            max-width: 850px;
+            margin: auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 25px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: #b99551;
+        }
+
+        .education-card {
+            position: relative;
+            margin-bottom: 30px;
+            margin-left: 65px;
+            padding: 28px;
+            background: #111e32;
+            border: 1px solid rgba(232, 196, 119, 0.2);
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            border-color: #e8c477;
+            box-shadow: 0 10px 30px rgba(232, 196, 119, 0.08);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -52px;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: #e8c477;
+            border: 4px solid #080f1e;
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(232, 196, 119, 0.5);
+        }
+
+        .education-card .level {
+            color: #e8c477;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .education-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .education-card h3 {
+            color: #d1d8e3;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .education-card p {
+            color: #a6b1c2;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .result {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background: rgba(232, 196, 119, 0.1);
+            border: 1px solid rgba(232, 196, 119, 0.3);
+            color: #e8c477;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            color: #8e9aab;
+            border-top: 1px solid rgba(232, 196, 119, 0.15);
+            font-size: 13px;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 750px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .section-heading h1 {
+                font-size: 35px;
+            }
+
+            .education-section {
+                padding: 50px 6%;
+            }
+
+            .education-card {
+                padding: 20px;
+            }
+
+            .education-card h2 {
+                font-size: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            ✧ Tech<span>Aura</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="education.html" class="active">Education</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Education Section -->
+
+    <main>
+
+        <section class="education-section">
+
+            <div class="section-heading">
+
+                <p>MY ACADEMIC JOURNEY</p>
+
+                <h1>My <span>Education</span></h1>
+
+                <p class="section-description">
+                    My educational journey and academic achievements.
+                </p>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <!-- MCA -->
+
+                <div class="education-card">
+
+                    <div class="timeline-dot"></div>
+
+                    <p class="level">POSTGRADUATION</p>
+
+                    <h2>Master of Computer Applications (MCA)</h2>
+
+                    <h3>Santhigiri College of Computer Sciences</h3>
+
+                    <p>
+                        Vazithala, Kerala
+                    </p>
+
+                    <p>
+                        Currently pursuing MCA to develop advanced
+                        knowledge in computer applications and
+                        software development.
+                    </p>
+
+                    <span class="result">
+                        Currently Pursuing
+                    </span>
+
+                </div>
+
+
+                <!-- BCA -->
+
+                <div class="education-card">
+
+                    <div class="timeline-dot"></div>
+
+                    <p class="level">UNDERGRADUATION</p>
+
+                    <h2>Bachelor of Computer Applications (BCA)</h2>
+
+                    <h3>BVM Holy Cross College</h3>
+
+                    <p>
+                        Cherpunkal, Kerala
+                    </p>
+
+                    <p>
+                        Completed undergraduate studies in computer
+                        applications with knowledge of programming
+                        and software development.
+                    </p>
+
+                    <span class="result">
+                        CCPA: 7.53
+                    </span>
+
+                </div>
+
+
+                <!-- Higher Secondary -->
+
+                <div class="education-card">
+
+                    <div class="timeline-dot"></div>
+
+                    <p class="level">HIGHER SECONDARY EDUCATION</p>
+
+                    <h2>Higher Secondary (Plus Two)</h2>
+
+                    <h3>St. Sebastian's HSS</h3>
+
+                    <p>
+                        Kadanad, Kerala
+                    </p>
+
+                    <p>
+                        Successfully completed higher secondary
+                        education.
+                    </p>
+
+                    <span class="result">
+                        Percentage: 92.5%
+                    </span>
+
+                </div>
+
+
+                <!-- SSLC -->
+
+                <div class="education-card">
+
+                    <div class="timeline-dot"></div>
+
+                    <p class="level">SECONDARY EDUCATION</p>
+
+                    <h2>SSLC</h2>
+
+                    <h3>Alphonsa GHSS</h3>
+
+                    <p>
+                        Vakakkad, Kerala
+                    </p>
+
+                    <p>
+                        Successfully completed secondary education
+                        with excellent grades.
+                    </p>
+
+                    <span class="result">
+                        Percentage: 98%
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+        <p>© 2026 TechAura | Designed by Sruthy</p>
+    </footer>
+
+</body>
+
+</html>

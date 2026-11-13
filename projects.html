@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Projects | TechAura</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #080f1e;
+            color: #f8f7f2;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+
+        .navbar {
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(232, 196, 119, 0.15);
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #e8c477;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #c5cbd5;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #e8c477;
+        }
+
+        /* Projects Section */
+
+        .projects-section {
+            padding: 70px 10%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-heading p {
+            color: #e8c477;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 45px;
+        }
+
+        .section-heading h1 span {
+            color: #e8c477;
+        }
+
+        .section-description {
+            color: #a6b1c2;
+            margin-top: 12px;
+            font-size: 15px;
+        }
+
+        /* Project Cards */
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .project-card {
+            background: #111e32;
+            border: 1px solid rgba(232, 196, 119, 0.2);
+            border-radius: 14px;
+            padding: 32px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #e8c477;
+            box-shadow: 0 12px 30px rgba(232, 196, 119, 0.08);
+        }
+
+        .project-icon {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(232, 196, 119, 0.1);
+            border-radius: 12px;
+            font-size: 32px;
+            margin-bottom: 22px;
+        }
+
+        .project-type {
+            color: #e8c477;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .project-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .project-card p {
+            color: #a6b1c2;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+
+        /* Technology Tags */
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .tech-stack span {
+            color: #e8c477;
+            background: rgba(232, 196, 119, 0.1);
+            border: 1px solid rgba(232, 196, 119, 0.25);
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Featured Project */
+
+        .featured {
+            grid-column: 1 / -1;
+            border-color: rgba(232, 196, 119, 0.5);
+            background: linear-gradient(135deg, #15243b, #111e32);
+        }
+
+        .featured-label {
+            display: inline-block;
+            width: fit-content;
+            color: #080f1e;
+            background: #e8c477;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            color: #8e9aab;
+            border-top: 1px solid rgba(232, 196, 119, 0.15);
+            font-size: 13px;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 750px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .featured {
+                grid-column: auto;
+            }
+
+            .section-heading h1 {
+                font-size: 35px;
+            }
+
+            .projects-section {
+                padding: 50px 7%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            ✧ Tech<span>Aura</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="education.html">Education</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Projects Section -->
+
+    <main>
+
+        <section class="projects-section">
+
+            <div class="section-heading">
+
+                <p>MY WORK & EXPERIENCE</p>
+
+                <h1>My <span>Projects</span></h1>
+
+                <p class="section-description">
+                    A collection of academic projects and practical learning experiences.
+                </p>
+
+            </div>
+
+
+            <div class="projects-container">
+
+
+                <!-- MCA Mini Project -->
+
+                <div class="project-card featured">
+
+                    <span class="featured-label">
+                        CURRENT PROJECT
+                    </span>
+
+                    <div class="project-icon">✈️</div>
+
+                    <p class="project-type">MCA MINI PROJECT</p>
+
+                    <h2>
+                        Smart Travel Discovery and Package Recommendation System
+                    </h2>
+
+                    <p>
+                        A smart travel platform designed to help users
+                        discover travel destinations and explore suitable
+                        tour packages. It provides package recommendations
+                        based on user preferences and travel interests,
+                        making travel planning easier and more convenient.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span>PHP</span>
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>AI</span>
+                    </div>
+
+                </div>
+
+
+                <!-- BCA Main Project -->
+
+                <div class="project-card">
+
+                    <div class="project-icon">🏥</div>
+
+                    <p class="project-type">BCA MAIN PROJECT</p>
+
+                    <h2>Clinic Management System</h2>
+
+                    <p>
+                        A web-based application developed to manage
+                        clinic activities efficiently. It helps organize
+                        patient information, doctor details and
+                        appointment-related information through a
+                        centralized system.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span>Django</span>
+                        <span>Python</span>
+                        <span>SQLite</span>
+                    </div>
+
+                </div>
+
+
+                <!-- BCA Mini Project -->
+
+                <div class="project-card">
+
+                    <div class="project-icon">🌱</div>
+
+                    <p class="project-type">BCA MINI PROJECT</p>
+
+                    <h2>Green Club Management System</h2>
+
+                    <p>
+                        A web-based application developed to manage
+                        green club activities in an educational
+                        institution. It helps organize environmental
+                        activities, manage student participation
+                        and coordinate club-related information.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+        <p>© 2026 TechAura | Designed by Sruthy</p>
+    </footer>
+
+</body>
+
+</html>

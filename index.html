@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechAura | Sruthy Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Internal CSS -->
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #080f1e;
+            color: #f8f7f2;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+
+        .navbar {
+            width: 100%;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 15, 30, 0.85);
+            border-bottom: 1px solid rgba(232, 196, 119, 0.15);
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #e8c477;
+        }
+
+        .logo-icon {
+            color: #e8c477;
+            margin-right: 7px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: #c5cbd5;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e8c477;
+        }
+
+        /* Hero Section */
+
+        .hero {
+            min-height: 82vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 12%;
+            gap: 50px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            animation: slideIn 1s ease;
+        }
+
+        .welcome {
+            color: #e8c477;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 75px;
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #e8c477;
+        }
+
+        .hero h2 {
+            color: #d2d8e2;
+            font-size: 23px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .description {
+            color: #a6b1c2;
+            font-size: 16px;
+            line-height: 1.9;
+            max-width: 530px;
+            margin-bottom: 25px;
+        }
+
+        .tagline {
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 35px;
+        }
+
+        .tagline span {
+            color: #e8c477;
+            margin: 0 8px;
+        }
+
+        /* Button */
+
+        .hero-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #e8c477, #c99b43);
+            color: #080f1e;
+            padding: 15px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(232, 196, 119, 0.25);
+        }
+
+        .hero-btn span {
+            margin-left: 12px;
+        }
+
+        /* Profile Image */
+
+        .hero-image {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .image-circle {
+            position: absolute;
+            width: 330px;
+            height: 330px;
+            border: 2px solid #e8c477;
+            border-radius: 50%;
+            box-shadow: 0 0 45px rgba(232, 196, 119, 0.15);
+        }
+
+        .profile-photo {
+            position: relative;
+            width: 290px;
+            height: 290px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #17243a;
+            z-index: 1;
+        }
+
+        /* Decorative Stars */
+
+        .star {
+            position: absolute;
+            color: #e8c477;
+            font-size: 35px;
+        }
+
+        .star-one {
+            top: 15px;
+            right: 5px;
+        }
+
+        .star-two {
+            bottom: 20px;
+            left: 0;
+            font-size: 28px;
+        }
+
+        /* Footer */
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #8e9aab;
+            font-size: 13px;
+            border-top: 1px solid rgba(232, 196, 119, 0.15);
+        }
+
+        /* Animation */
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 950px) {
+
+            .hero {
+                padding: 60px 7%;
+                gap: 30px;
+            }
+
+            .hero h1 {
+                font-size: 58px;
+            }
+
+            .hero-image {
+                width: 280px;
+                height: 280px;
+            }
+
+            .image-circle {
+                width: 270px;
+                height: 270px;
+            }
+
+            .profile-photo {
+                width: 235px;
+                height: 235px;
+            }
+
+            .nav-links {
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px 5%;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 45px 7%;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .hero-image {
+                width: 250px;
+                height: 250px;
+            }
+
+            .image-circle {
+                width: 240px;
+                height: 240px;
+            }
+
+            .profile-photo {
+                width: 210px;
+                height: 210px;
+            }
+
+            .welcome {
+                font-size: 11px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            <span class="logo-icon">✧</span>Tech<span>Aura</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="about.html">About</a>
+            <a href="education.html">Education</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Hero Section -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+            
+
+                <p class="welcome">
+                    WELCOME TO MY PORTFOLIO
+                </p>
+
+                <h1>
+                    Hello, I'm <br>
+                    <span>Sruthy</span>
+                </h1>
+
+                <h2>
+                    MCA Student | Aspiring Developer
+                </h2>
+
+                <p class="description">
+                    I'm passionate about technology, creativity and
+                    continuous learning. I enjoy exploring programming,
+                    developing innovative ideas and creating meaningful
+                    digital experiences.
+                </p>
+
+                <p class="tagline">
+                    THINK <span>•</span> CREATE <span>•</span> INNOVATE
+                </p>
+
+                <a href="about.html" class="hero-btn">
+                    Explore My World <span>↗</span>
+                </a>
+
+            </div>
+
+
+            <!-- Profile Image -->
+
+            <div class="hero-image">
+
+                <div class="image-circle"></div>
+
+                <img
+                    src="Assets/images/s.jpeg"
+                    alt="Sruthy's Profile Photo"
+                    class="profile-photo"
+                >
+
+                <div class="star star-one">✦</div>
+                <div class="star star-two">✧</div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <p>© 2026 TechAura | Designed by Sruthy</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Me | TechAura</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #080f1e;
+            color: #f8f7f2;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+
+        .navbar {
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(232, 196, 119, 0.15);
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #e8c477;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #c5cbd5;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #e8c477;
+        }
+
+        /* Contact Section */
+
+        .contact-section {
+            min-height: 75vh;
+            padding: 80px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-heading p {
+            color: #e8c477;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 48px;
+        }
+
+        .section-heading h1 span {
+            color: #e8c477;
+        }
+
+        .section-description {
+            color: #a6b1c2;
+            margin-top: 15px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* Contact Cards */
+
+        .contact-container {
+            width: 100%;
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: #111e32;
+            padding: 35px 20px;
+            text-align: center;
+            border: 1px solid rgba(232, 196, 119, 0.2);
+            border-radius: 14px;
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            border-color: #e8c477;
+            box-shadow: 0 12px 30px rgba(232, 196, 119, 0.1);
+        }
+
+        .contact-icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(232, 196, 119, 0.1);
+            border-radius: 50%;
+            font-size: 28px;
+        }
+
+        .contact-card h2 {
+            font-family: 'Outfit', sans-serif;
+            color: #e8c477;
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .contact-card a {
+            color: #a6b1c2;
+            text-decoration: none;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+            transition: 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: #e8c477;
+        }
+
+        .connect-message {
+            text-align: center;
+            margin-top: 50px;
+            color: #a6b1c2;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .connect-message span {
+            color: #e8c477;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            color: #8e9aab;
+            border-top: 1px solid rgba(232, 196, 119, 0.15);
+            font-size: 13px;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 850px) {
+
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .section-heading h1 {
+                font-size: 36px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-section {
+                padding: 55px 7%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            ✧ Tech<span>Aura</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="education.html">Education</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Contact Section -->
+
+    <main>
+
+        <section class="contact-section">
+
+            <div class="section-heading">
+
+                <p>GET IN TOUCH</p>
+
+                <h1>Contact <span>Me</span></h1>
+
+                <p class="section-description">
+                    Have an opportunity or just want to connect?
+                    Feel free to reach out!
+                </p>
+
+            </div>
+
+
+            <div class="contact-container">
+
+
+                <!-- Email -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">✉️</div>
+
+                    <h2>Email</h2>
+
+                    <a href="mailto:sruthymariyarojo@gmail.com">
+                        sruthymariyarojo@gmail.com
+                    </a>
+
+                </div>
+
+
+                <!-- Phone -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">📞</div>
+
+                    <h2>Phone Number</h2>
+
+                    <a href="tel:8590405960">
+                        +91 8590405960
+                    </a>
+
+                </div>
+
+
+                <!-- LinkedIn -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">💼</div>
+
+                    <h2>LinkedIn</h2>
+
+                    <a href="https://www.linkedin.com/in/sruthy-mariya-rojo-a36394320"
+                       target="_blank">
+                        Visit My Profile ↗
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="connect-message">
+
+                <p>
+                    Thank you for visiting my portfolio!
+                    <br>
+                    <span>Let's connect and create something meaningful.</span>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+        <p>© 2026 TechAura | Designed by Sruthy</p>
+    </footer>
+
+</body>
+
+</html>

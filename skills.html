@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Skills | TechAura</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #080f1e;
+            color: #f8f7f2;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+
+        .navbar {
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(232, 196, 119, 0.15);
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #e8c477;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #c5cbd5;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #e8c477;
+        }
+
+        /* Skills Section */
+
+        .skills-section {
+            padding: 70px 10%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-heading p {
+            color: #e8c477;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 45px;
+        }
+
+        .section-heading h1 span {
+            color: #e8c477;
+        }
+
+        .section-description {
+            color: #a6b1c2;
+            margin-top: 12px;
+            font-size: 15px;
+        }
+
+        /* Skill Category */
+
+        .skill-category {
+            margin-bottom: 60px;
+        }
+
+        .category-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .category-title span {
+            color: #e8c477;
+        }
+
+        /* Skill Cards */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .skill-card {
+            background: #111e32;
+            padding: 35px 20px;
+            border: 1px solid rgba(232, 196, 119, 0.2);
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #e8c477;
+            box-shadow: 0 10px 30px rgba(232, 196, 119, 0.1);
+        }
+
+        .skill-icon {
+            font-size: 40px;
+            margin-bottom: 18px;
+        }
+
+        .skill-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 21px;
+            margin-bottom: 10px;
+            color: #e8c477;
+        }
+
+        .skill-card p {
+            color: #a6b1c2;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Personal Skills */
+
+        .personal-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .personal-card {
+            background: #111e32;
+            padding: 30px;
+            border: 1px solid rgba(232, 196, 119, 0.2);
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .personal-card:hover {
+            transform: translateY(-7px);
+            border-color: #e8c477;
+        }
+
+        .personal-card .skill-icon {
+            color: #e8c477;
+        }
+
+        .personal-card h3 {
+            font-size: 19px;
+            color: #e8c477;
+            margin-bottom: 10px;
+        }
+
+        .personal-card p {
+            color: #a6b1c2;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            color: #8e9aab;
+            border-top: 1px solid rgba(232, 196, 119, 0.15);
+            font-size: 13px;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 850px) {
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .section-heading h1 {
+                font-size: 35px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .personal-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-section {
+                padding: 50px 7%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            ✧ Tech<span>Aura</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="education.html">Education</a>
+            <a href="skills.html" class="active">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Skills Section -->
+
+    <main>
+
+        <section class="skills-section">
+
+            <div class="section-heading">
+
+                <p>WHAT I CAN DO</p>
+
+                <h1>My <span>Skills</span></h1>
+
+                <p class="section-description">
+                    My technical knowledge and personal strengths.
+                </p>
+
+            </div>
+
+
+            <!-- Technical Skills -->
+
+            <div class="skill-category">
+
+                <h2 class="category-title">
+                    Technical <span>Skills</span>
+                </h2>
+
+                <div class="skills-container">
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">🐍</div>
+
+                        <h3>Python</h3>
+
+                        <p>
+                            Programming fundamentals and basic coding.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">☕</div>
+
+                        <h3>Java</h3>
+
+                        <p>
+                            Object-oriented programming concepts.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">💻</div>
+
+                        <h3>C</h3>
+
+                        <p>
+                            Programming logic and problem solving.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">⚙️</div>
+
+                        <h3>C++</h3>
+
+                        <p>
+                            Programming basics and object-oriented concepts.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Personal Skills -->
+
+            <div class="skill-category">
+
+                <h2 class="category-title">
+                    Personal <span>Skills</span>
+                </h2>
+
+                <div class="personal-container">
+
+
+                    <div class="personal-card">
+
+                        <div class="skill-icon">🧩</div>
+
+                        <h3>Problem Solving</h3>
+
+                        <p>
+                            Ability to understand problems and find
+                            effective solutions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="personal-card">
+
+                        <div class="skill-icon">👂</div>
+
+                        <h3>Good Listener</h3>
+
+                        <p>
+                            Listen carefully, understand others'
+                            ideas and communicate effectively.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+        <p>© 2026 TechAura | Designed by Sruthy</p>
+    </footer>
+
+</body>
+
+</html>
